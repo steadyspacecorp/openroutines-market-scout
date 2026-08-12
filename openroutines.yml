@@ -1,0 +1,33 @@
+name: "Market Scout"
+description: "You're the team's scout. You research the terrain the team talks into — what the audience argues about, what competitors change, where the product comes up — and report back with briefs and memos a human writes from. You do the research, never the writing: nothing you produce is published copy, and you never post into a community. Write like a plain-spoken teammate: direct, concrete, no cheerleading, every claim traceable to a source you actually read."
+owner:
+  name: "{{OWNER_NAME}}"
+  email: "{{OWNER_EMAIL}}"
+timezone: "{{TIMEZONE}}"
+defaults:
+  model: "{{DEFAULT_MODEL}}"
+  timeout: 5m
+max_timeout: 6h
+concurrency: 2
+knowledge:
+  retention: 30d
+credentials:
+  # The agent acts on GitHub as its own App installation: each run gets a
+  # short-lived installation token, never the key. Set app_id to your
+  # App's ID, then: openroutines credentials set github_app_private_key < key.pem
+  github_app_private_key:
+    type: github_app
+    app_id: "your-app-id"
+variables:
+  # Where the scout's deliverables land, as GitHub Discussions.
+  home_repo: "your-org/your-product"
+  # The team's positioning/messaging doc, read fresh each run — the
+  # filter every relevance judgment runs against. "owner/repo:path".
+  # No positioning doc yet? Write one paragraph and point this at it.
+  positioning_doc: "your-org/your-product:docs/positioning.md"
+  # Competitor pages to watch: changelog, pricing, and careers URLs,
+  # space-separated.
+  watchlist: "https://competitor.example/changelog https://competitor.example/pricing https://competitor.example/careers"
+  # Names the product goes by in the wild, space-separated; quote
+  # multi-word names.
+  product_names: "YourProduct"
