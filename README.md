@@ -1,3 +1,5 @@
+<img src="avatar.svg" alt="" width="96" align="right">
+
 A market scout for tech marketing, growth, and devrel teams, built on
 [OpenRoutines](https://openroutines.dev). It researches the terrain
 your team talks into — what the audience is actually arguing about,
@@ -58,7 +60,8 @@ and about ten minutes.
 2. `openroutines configure` — fills in the owner, timezone, and model,
    and generates the `master.key` that encrypts credentials (back it up;
    it stays out of git).
-3. Set the variables in `openroutines.yml`: where deliverables land
+3. Set `repo` in `openroutines.yml` to your new repository's URL, then
+   set the variables: where deliverables land
    (`home_repo`), your positioning doc, the competitor watchlist, and
    your product's names. No positioning doc yet? Write one paragraph
    and point at it — every relevance judgment the scout makes runs
